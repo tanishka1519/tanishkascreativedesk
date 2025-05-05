@@ -11,46 +11,52 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
     }
 
-    /* Body Background */
     body {
-      background: linear-gradient(120deg, #fdf0f4, #e3d7f5, #d9f3f1);
-      background-size: 400% 400%;
-      animation: gradientShift 20s ease infinite;
+      background: linear-gradient(135deg, #fdf6f8 0%, #e7e5f5 30%, #e6f7f7 60%, #fbe9ff 100%);
+      background-size: 200% 200%;
+      animation: bgShift 25s ease infinite;
       color: #2A2A2A;
-      padding: 0;
-      margin: 0;
     }
 
-    /* Gradient Animation */
-    @keyframes gradientShift {
+    @keyframes bgShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* Container */
     .container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 2rem;
     }
 
-    /* Section Styling */
     .section {
-      background: linear-gradient(145deg, #ffffffee, #f8eaffee), 
-                  url('https://www.transparenttextures.com/patterns/pw-maze-white.png');
-      background-blend-mode: overlay;
-      background-size: cover;
-      background-repeat: repeat;
-      padding: 2rem;
+      background: linear-gradient(120deg, #ffffffcc, #f9f1ffcc);
+      backdrop-filter: blur(8px);
       border-radius: 1.5rem;
       margin-bottom: 2rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+      position: relative;
+      overflow: hidden;
+      transition: 0.4s ease;
       opacity: 0;
       transform: translateY(40px);
-      transition: 0.5s ease;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+      opacity: 0.07;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
     }
 
     .section.visible {
@@ -58,7 +64,11 @@
       transform: translateY(0);
     }
 
-    /* Header */
+    .section > * {
+      position: relative;
+      z-index: 1;
+    }
+
     .header {
       text-align: center;
     }
@@ -67,47 +77,49 @@
       width: 120px;
       margin-bottom: 1rem;
       border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .header h1 {
-      font-size: 2.4rem;
-      color: #462F6C;
+      font-size: 2.2rem;
+      color: #5b3e9d;
     }
 
     .tagline {
-      color: #DB5C1C;
+      color: #ff80aa;
       font-weight: 600;
       margin-top: 0.5rem;
     }
 
-    /* Service Icons */
     .service-icons {
       display: flex;
       justify-content: center;
-      gap: 1.2rem;
+      gap: 1rem;
       margin-top: 1.2rem;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       flex-wrap: wrap;
     }
 
     .service-icons div {
       text-align: center;
+      padding: 0.4rem 0.6rem;
+      background: #f5f1fc;
+      border-radius: 0.75rem;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     }
 
     .service-icons span {
       display: block;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
 
-    /* Section Titles */
     .section h2 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       margin-bottom: 1rem;
-      color: #1A1A1A;
+      color: #4a2c74;
     }
 
-    /* List Items */
     .section ul {
       list-style: none;
       padding-left: 1rem;
@@ -115,16 +127,54 @@
 
     .section ul li {
       margin: 0.5rem 0;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
 
-    /* Form Styling */
+    .contact a {
+      color: #7c4dff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .qr {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    img.qr-code {
+      width: 120px;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+
+    .about-me {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-photo {
+      flex: 1;
+      text-align: center;
+    }
+
+    .about-photo img {
+      width: 200px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
     form.form-styled {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       margin-top: 1rem;
-      background-color: #ffffffdd;
+      background-color: #fff9ffcc;
       padding: 2rem;
       border-radius: 1.5rem;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
@@ -139,13 +189,13 @@
     form.form-styled select,
     form.form-styled textarea {
       padding: 0.8rem;
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
       border-radius: 0.75rem;
       font-size: 1rem;
     }
 
     form.form-styled button {
-      background-color: #462F6C;
+      background-color: #5c36c5;
       color: white;
       border: none;
       padding: 0.8rem 1.2rem;
@@ -156,149 +206,87 @@
     }
 
     form.form-styled button:hover {
-      background-color: #6A4ACD;
+      background-color: #7b57e0;
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      body {
-        padding: 0 1rem;
-      }
-
+    @media screen and (max-width: 600px) {
       .header h1 {
         font-size: 1.8rem;
       }
-
-      .section h2 {
-        font-size: 1.4rem;
-      }
-
       .service-icons {
-        flex-direction: column;
-        align-items: center;
+        font-size: 0.85rem;
       }
-
-      form.form-styled {
-        padding: 1rem;
-      }
-
-      .about-me {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .about-photo img {
-        width: 150px;
-        height: 150px;
-      }
-    }
-
-    /* Image Responsiveness */
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 1rem;
     }
   </style>
 </head>
 <body>
-
   <div class="container">
-
-    <!-- Header Section -->
-    <div class="section header">
-      <img src="https://via.placeholder.com/120" alt="Logo" class="logo" />
+    <div class="header section visible">
+      <img src="https://i.imgur.com/WPKuMZm.png" alt="Logo" class="logo">
       <h1>Tanishka's Creative Desk</h1>
-      <p class="tagline">Crafting Your Success, One Project at a Time</p>
+      <p class="tagline">Design ✧ Print ✧ Create</p>
       <div class="service-icons">
-        <div><span>📄</span> Resume</div>
-        <div><span>📊</span> Power BI</div>
-        <div><span>📽️</span> PowerPoint</div>
-        <div><span>📈</span> Excel</div>
-        <div><span>🔧</span> Microsoft Tools</div>
-        <div><span>🤖</span> Prompt Engineering</div>
+        <div><span>📄</span>Assignments</div>
+        <div><span>📚</span>Notes</div>
+        <div><span>📦</span>Customized Gifts</div>
+        <div><span>🎨</span>Design</div>
+        <div><span>🖨️</span>Print</div>
       </div>
     </div>
 
-    <!-- About Section -->
-    <div class="section">
-      <h2>About My Freelancing Business</h2>
-      <p>Big dreams? Messy tasks? Bring them to Tanishka’s Creative Desk. From glow-up resumes to scroll-stopping logos and smooth data magic — I get it done, fast and fab. 6+ happy clients, 4.8 stars, and counting. Ready when you are!</p>
-    </div>
-
-    <!-- Services Section -->
-    <div class="section">
-      <h2>Services & Pricing</h2>
+    <div class="section visible">
+      <h2>Services Offered</h2>
       <ul>
-        <li>📄 Resume Writing – starting at ₹100</li>
-        <li>📊 Data Entry – starting at ₹100</li>
-        <li>📽️ PowerPoint & Excel Work – starting at ₹100</li>
-        <li>📊 PowerBI Analysis – starting at ₹100</li>
-        <li>🔧 Microsoft Tools Help – starting at ₹100</li>
-        <li>⚙️ Prices vary based on needs and complexity</li>
+        <li>Assignment Completion (Handwritten & Printed)</li>
+        <li>Notes Making (Decorative & Simple)</li>
+        <li>Customized Gift Hamper Creation</li>
+        <li>Design & Print Services</li>
       </ul>
     </div>
 
-    <!-- Request Form Section -->
-    <div class="section">
-      <h2>Request a Service</h2>
-      <form action="https://formsubmit.co/tanishkakashyap15@gmail.com" method="POST" enctype="multipart/form-data" class="form-styled">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="service">Select a Service:</label>
-        <select id="service" name="service" required>
-          <option value="" disabled selected>Choose a service</option>
-          <option value="Resume">Resume Writing</option>
-          <option value="Data Entry">Data Entry</option>
-          <option value="PowerPoint">PowerPoint & Excel</option>
-          <option value="PowerBI">PowerBI Analysis</option>
-          <option value="Other">Others</option>
-        </select>
-
-        <label for="timeline">Timeline:</label>
-        <select id="timeline" name="timeline" required>
-          <option value="" disabled selected>Select timeline</option>
-          <option value="1 Day">1 Day</option>
-          <option value="2 Days">2 Days</option>
-          <option value="3 Days">3 Days</option>
-          <option value="1 Week">1 Week</option>
-        </select>
-
-        <label><input type="checkbox" name="urgent" value="Yes"> Is this request urgent?</label>
-
-        <label for="attachment">Attach a File (Optional):</label>
-        <input type="file" id="attachment" name="attachment">
-
-        <button type="submit">🚀 Submit Request</button>
-      </form>
-    </div>
-
-    <!-- About Me Section -->
-    <div class="section">
-      <h2>About Me</h2>
-      <div class="about-me">
-        <div class="about-text">
-          <p>Hi, I’m Tanishka — a final year BBA (FinTech) student and an intern at Genpact, where I’m sharpening my skills in the real-world business space. Along with my studies, I run Tanishka’s Creative Desk, helping people and businesses with resume writing, PowerPoint magic, Excel tasks, and more.</p>
-        </div>
-        <div class="about-photo">
-          <img src="https://via.placeholder.com/200" alt="Tanishka's Photo" />
-        </div>
+    <div class="section visible about-me">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>Hey! I'm Tanishka — a passionate creator who loves to blend design, learning, and aesthetics. I help students with beautifully organized notes, assignments, and personalized gifts. Let’s make studying ✧ and gifting ✧ more joyful!</p>
+      </div>
+      <div class="about-photo">
+        <img src="https://i.imgur.com/rl3ZbWy.jpg" alt="Tanishka">
       </div>
     </div>
 
-    <!-- Contact Section -->
-    <div class="section contact">
+    <div class="section visible contact">
       <h2>Contact Me</h2>
-      <p>📧 Email: <a href="mailto:tanishkakashyap15@gmail.com">tanishkakashyap15@gmail.com</a></p>
+      <p>📩 <a href="mailto:tanishkacreativedesk@gmail.com">tanishkacreativedesk@gmail.com</a></p>
+      <p>📱 WhatsApp: 9876543210</p>
+      <div class="qr">
+        <img src="https://i.imgur.com/AT1IGmZ.png" alt="WhatsApp QR" class="qr-code">
+      </div>
     </div>
 
+    <div class="section visible">
+      <h2>Submit a Request</h2>
+      <form class="form-styled">
+        <label>Name:</label>
+        <input type="text" required />
+
+        <label>Service:</label>
+        <select required>
+          <option value="">Choose a service</option>
+          <option value="assignments">Assignments</option>
+          <option value="notes">Notes</option>
+          <option value="gifts">Gift Hampers</option>
+          <option value="design">Design</option>
+          <option value="print">Print</option>
+        </select>
+
+        <label>Details:</label>
+        <textarea rows="4" required></textarea>
+
+        <button type="submit">Send Request</button>
+      </form>
+    </div>
   </div>
 
-  <!-- Script for Fade-in Effect -->
   <script>
     const sections = document.querySelectorAll('.section');
     const observer = new IntersectionObserver(entries => {
@@ -307,14 +295,9 @@
           entry.target.classList.add('visible');
         }
       });
-    }, {
-      threshold: 0.1
-    });
+    }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+    sections.forEach(section => observer.observe(section));
   </script>
-
 </body>
 </html>
