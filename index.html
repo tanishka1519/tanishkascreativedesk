@@ -1,302 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tanishka's Creative Desk</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-      scroll-behavior: smooth;
-    }
-
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif; }
     body {
-      background: linear-gradient(135deg, #F8E9DD, #C5A8F1, #96E3D2);
-      background-size: cover;
-      color: #2A2A2A;
-      overflow-x: hidden;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    /* Wave background outside boxes */
-    .wave-pattern {
       background: url('wave-pattern.png') no-repeat center bottom;
       background-size: cover;
-      padding: 5rem 0;
-      margin-bottom: 4rem;
+      color: #2A2A2A;
+      overflow-x:hidden;
     }
-
+    .container { max-width:1000px; margin:0 auto; padding:2rem; }
     .section {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 2rem;
-      border-radius: 1.5rem;
-      margin-bottom: 2rem;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+      background: rgba(255,255,255,0.85);
+      border-radius:1.5rem;
+      padding:2rem;
+      margin-bottom:2rem;
+      box-shadow:0 8px 20px rgba(0,0,0,0.05);
+      opacity:0; transform:translateY(40px);
+      transition:opacity .8s ease, transform .8s ease;
     }
-
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .header {
-      text-align: center;
-    }
-
-    .header img.logo {
-      width: 150px;
-      margin-bottom: 1rem;
-      border-radius: 1rem;
-    }
-
-    .header h1 {
-      font-size: 2.5rem;
-      color: #462F6C;
-    }
-
-    .tagline {
-      color: #DB5C1C;
-      font-weight: 600;
-      margin-top: 0.5rem;
-    }
-
+    .section.visible { opacity:1; transform:translateY(0); }
+    .header { text-align:center; }
+    .header img.logo { width:140px; border-radius:1rem; margin-bottom:1rem; }
+    .header h1 { font-size:2.6rem; color:#462F6C; }
+    .tagline { color:#DB5C1C; font-weight:600; margin-top:.5rem; }
     .service-icons {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1.5rem;
-      font-size: 1.5rem;
+      display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; margin-top:1.5rem;
     }
-
     .service-icons div {
-      text-align: center;
+      background:#FDEFEF; padding:1rem 1.2rem; border-radius:1rem;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:center; font-size:1.1rem;
     }
-
-    .service-icons span {
-      display: block;
-      font-size: 2rem;
-    }
-
-    .section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #1A1A1A;
-    }
-
-    .section ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
-
-    .section ul li {
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
-    }
-
-    .contact a {
-      color: #462F6C;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .qr {
-      margin-top: 1rem;
-      text-align: center;
-    }
-
-    img.qr-code {
-      width: 120px;
-      height: auto;
-      border-radius: 0.5rem;
-    }
-
-    .about-me {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .about-text {
-      flex: 1;
-    }
-
-    .about-photo {
-      flex: 1;
-      text-align: center;
-    }
-
-    .about-photo img {
-      width: 200px;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 1rem;
-      margin-top: 1rem;
-    }
-
-    /* Custom Styles for Form */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
+    .service-icons span { display:block; font-size:1.8rem; margin-bottom:.3rem; }
+    h2 { font-size:1.9rem; color:#4C3F91; margin-bottom:1rem; }
+    p, ul li { font-size:1.05rem; line-height:1.6; }
+    ul { list-style:none; padding-left:1rem; }
+    ul li { margin-bottom:.5rem; }
+    form { display:flex; flex-direction:column; gap:1rem; }
     input, select, textarea {
-      padding: 0.75rem;
-      font-size: 1rem;
-      border-radius: 0.75rem;
-      border: 1px solid #D3D3D3;
+      width:100%; padding:.8rem; border:1px solid #ccc; border-radius:.75rem; background:#F9F9FF;
     }
-
-    textarea {
-      resize: vertical;
-    }
-
     button {
-      padding: 1rem;
-      background-color: #462F6C;
-      color: white;
-      border: none;
-      border-radius: 0.75rem;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      padding:1rem; background:#462F6C; color:#fff; border:none; border-radius:.75rem;
+      cursor:pointer; font-size:1.1rem; transition:background .3s;
     }
-
-    button:hover {
-      background-color: #DB5C1C;
+    button:hover { background:#DB5C1C; }
+    .about-me { display:flex; flex-wrap:wrap; align-items:center; gap:1rem; }
+    .about-photo img {
+      width:180px; border-radius:1rem; box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    @media(max-width:768px) {
+      .about-me { flex-direction:column; text-align:center; }
+      .service-icons { gap:.8rem; }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-
     <div class="section header">
-      <img src="images/logo.jpg" alt="Service Logo" class="logo" />
+      <img src="images/logo.jpg" alt="Logo" class="logo">
       <h1>Tanishka's Creative Desk</h1>
       <p class="tagline">Crafting Your Success, One Project at a Time</p>
       <div class="service-icons">
-        <div><span>📄</span>Prompt Engineering</div>
-        <div><span>📊</span>Excel & Power BI</div>
-        <div><span>📽️</span>PowerPoint</div>
-        <div><span>📈</span>Data Entry</div>
-        <div><span>📑</span>Resume Making</div>
-        <div><span>🛠️</span>Microsoft Tools</div>
+        <div><span>📄</span>Resume Making</div>
+        <div><span>🧠</span>Prompt Engineering</div>
         <div><span>📊</span>Power BI</div>
+        <div><span>🧮</span>Excel</div>
+        <div><span>📑</span>MS Word</div>
+        <div><span>📽️</span>PowerPoint</div>
+        <div><span>🛠️</span>All MS Tools</div>
       </div>
     </div>
 
-    <div class="section wave-pattern">
+    <div class="section">
       <h2>About My Freelancing Business</h2>
-      <p>Big dreams? Messy tasks? Bring them to Tanishka’s Creative Desk. From glow-up resumes to scroll-stopping logos and smooth data magic — I get it done, fast and fab. 6+ happy clients, 4.8 stars, and counting. Ready when you are!</p>
+      <p>Big dreams? Messy tasks? Bring them to Tanishka’s Creative Desk. From resumes and prompt engineering to Power BI dashboards, I get it done fast and fab. 6+ happy clients, 4.8 stars, and counting.</p>
     </div>
 
-    <div class="section wave-pattern">
+    <div class="section">
       <h2>Services & Pricing</h2>
       <ul>
-        <li>📄 Prompt Engineering – starting at ₹100</li>
-        <li>📊 Excel & Power BI – starting at ₹100</li>
-        <li>📽️ PowerPoint – starting at ₹100</li>
-        <li>📈 Data Entry – starting at ₹100</li>
-        <li>📑 Resume Making – starting at ₹200</li>
-        <li>🛠️ Microsoft Tools – starting at ₹100</li>
-        <li>📊 Power BI – starting at ₹150</li>
+        <li>📄 Resume Making – starting at ₹100</li>
+        <li>🧠 Prompt Engineering – starting at ₹100</li>
+        <li>📊 Power BI Dashboards – starting at ₹150</li>
+        <li>🧮 Excel Automation – starting at ₹100</li>
+        <li>📑 Word Formatting – starting at ₹100</li>
+        <li>📽️ PPT Design – starting at ₹100</li>
+        <li>🛠️ All MS Tools Support – custom quote</li>
       </ul>
     </div>
 
-    <div class="section wave-pattern">
+    <div class="section">
       <h2>Request a Service</h2>
       <form action="https://formsubmit.co/tanishkakashyap15@gmail.com" method="POST">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="service">Select a Service:</label>
-        <select id="service" name="service" required>
-          <option value="" disabled selected>Choose a service</option>
-          <option value="Prompt Engineering">Prompt Engineering</option>
-          <option value="Excel & Power BI">Excel & Power BI</option>
-          <option value="PowerPoint">PowerPoint</option>
-          <option value="Data Entry">Data Entry</option>
-          <option value="Resume Making">Resume Making</option>
-          <option value="Microsoft Tools">Microsoft Tools</option>
-          <option value="Power BI">Power BI</option>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <select name="service" required>
+          <option disabled selected>Choose a Service</option>
+          <option>Resume Making</option>
+          <option>Prompt Engineering</option>
+          <option>Power BI</option>
+          <option>Excel</option>
+          <option>Word</option>
+          <option>PowerPoint</option>
+          <option>All MS Tools</option>
         </select>
-
-        <label for="timeline">Select Timeline:</label>
-        <select id="timeline" name="timeline" required>
-          <option value="" disabled selected>Select timeline</option>
-          <option value="1 Day">1 Day</option>
-          <option value="2 Days">2 Days</option>
-          <option value="3 Days">3 Days</option>
-          <option value="1 Week">1 Week</option>
+        <select name="timeline" required>
+          <option disabled selected>Select Timeline</option>
+          <option>1 Day</option>
+          <option>2 Days</option>
+          <option>3 Days</option>
+          <option>1 Week</option>
+          <option>Flexible</option>
         </select>
-
-        <label for="details">More Details:</label>
-        <textarea id="details" name="details" rows="4" placeholder="Describe what you need..."></textarea>
-
+        <textarea name="details" rows="4" placeholder="Describe your need..."></textarea>
         <button type="submit">🚀 Submit Request</button>
       </form>
     </div>
 
-    <div class="section wave-pattern">
+    <div class="section">
       <h2>About Me</h2>
       <div class="about-me">
         <div class="about-text">
-          <p>Hi, I’m Tanishka — a final year BBA (FinTech) student and an intern at Genpact, sharpening my skills in business. I also run Tanishka’s Creative Desk, helping with resumes, logos, and Excel tasks.</p>
+          <p>Hi, I’m Tanishka — final-year BBA (FinTech) student & Genpact intern. I combine creativity and productivity to deliver elegant, functional solutions across Microsoft tools, data, and design.</p>
         </div>
         <div class="about-photo">
-          <img src="Images/my%20photo.jpg" alt="Tanishka's Photo" />
+          <img src="images/my-photo.jpg" alt="Tanishka's Photo">
         </div>
       </div>
     </div>
 
-    <div class="section wave-pattern contact">
+    <div class="section">
       <h2>Contact Me</h2>
-      <p>📧 Email: <a href="mailto:tanishkakashyap15@gmail.com">tanishkakashyap15@gmail.com</a></p>
-      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/tanishkakashyap" target="_blank">linkedin.com/in/tanishkakashyap</a></p>
+      <p>📧 <a href="mailto:tanishkakashyap15@gmail.com">tanishkakashyap15@gmail.com</a></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/tanishkakashyap" target="_blank">linkedin.com/in/tanishkakashyap</a></p>
     </div>
-
   </div>
 
   <script>
     const sections = document.querySelectorAll('.section');
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    },{ threshold:0.1 });
+    sections.forEach(s => observer.observe(s));
   </script>
 </body>
-
 </html>
