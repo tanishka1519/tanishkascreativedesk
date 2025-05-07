@@ -17,21 +17,22 @@
 
     body {
       background: linear-gradient(135deg, #F8E9DD, #C5A8F1, #96E3D2);
-      background-size: cover;
       color: #2A2A2A;
+      line-height: 1.6;
     }
 
     .container {
       max-width: 1000px;
-      margin: 0 auto;
+      margin: auto;
       padding: 2rem;
     }
 
     .section {
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.85);
       padding: 2rem;
       border-radius: 1.5rem;
       margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 0.8s ease, transform 0.8s ease;
@@ -46,13 +47,13 @@
       text-align: center;
     }
 
-    .header img.logo {
+    .logo {
       width: 150px;
-      margin-bottom: 1rem;
       border-radius: 1rem;
+      margin-bottom: 1rem;
     }
 
-    .header h1 {
+    h1 {
       font-size: 2.5rem;
       color: #462F6C;
     }
@@ -65,58 +66,64 @@
 
     .service-icons {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.5rem;
+      font-size: 1.3rem;
       margin-top: 1.5rem;
-      font-size: 1.5rem;
     }
 
     .service-icons div {
       text-align: center;
+      min-width: 80px;
     }
 
-    .service-icons span {
-      display: block;
-      font-size: 2rem;
-    }
-
-    .section h2 {
+    h2 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
       color: #1A1A1A;
     }
 
-    .section ul {
+    ul {
       list-style: none;
       padding-left: 1rem;
     }
 
-    .section ul li {
+    ul li {
       margin: 0.5rem 0;
-      font-size: 1.1rem;
     }
 
-    .contact a {
-      color: #462F6C;
-      text-decoration: none;
-      font-weight: bold;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
-    .qr {
-      margin-top: 1rem;
-      text-align: center;
-    }
-
-    img.qr-code {
-      width: 120px;
-      height: auto;
+    input, select, textarea {
+      padding: 0.75rem;
       border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #462F6C;
+      color: #fff;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #321f4f;
     }
 
     .about-me {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       gap: 1rem;
     }
 
@@ -131,109 +138,96 @@
 
     .about-photo img {
       width: 200px;
+      max-width: 100%;
       border-radius: 1rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 1rem;
-      margin-top: 1rem;
+    .contact a {
+      color: #462F6C;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 600px) {
+      .about-me {
+        flex-direction: column;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .logo {
+        width: 120px;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-
     <div class="section header">
-      <img src="images/logo.jpg" alt="Service Logo" class="logo" />
+      <img src="Images/logo.jpg" alt="Logo" class="logo">
       <h1>Tanishka's Creative Desk</h1>
       <p class="tagline">Crafting Your Success, One Project at a Time</p>
       <div class="service-icons">
-        <div><span>📄</span>Resume</div>
-        <div><span>🎨</span>Logo</div>
-        <div><span>📊</span>Data Entry</div>
-        <div><span>📽️</span>PowerPoint</div>
-        <div><span>📈</span>Excel</div>
+        <div><span>📄</span><br>Resume</div>
+        <div><span>🎨</span><br>Logo</div>
+        <div><span>📊</span><br>Data</div>
+        <div><span>📽️</span><br>PPT</div>
+        <div><span>📈</span><br>Excel</div>
       </div>
     </div>
 
     <div class="section">
       <h2>About My Freelancing Business</h2>
-      <p>Big dreams? Messy tasks? Bring them to Tanishka’s Creative Desk. From glow-up resumes to scroll-stopping logos and smooth data magic — I get it done, fast and fab. 6+ happy clients, 4.8 stars, and counting. Ready when you are!
-
-What started as a small desk with big ideas is now a go-to spot for students, professionals, and small businesses who want their work to shine. Whether you’re applying for your dream job, building your brand, or just need clean, crisp presentations — I’m here to make it easy, quick, and exactly the way you want.
-
-At Tanishka’s Creative Desk, every project gets personal attention, because I believe in creating not just work, but wow moments. Ready to upgrade your game? Let’s create something awesome together!.</p>
+      <p>Big dreams? Messy tasks? Bring them to Tanishka’s Creative Desk. From glow-up resumes to scroll-stopping logos and smooth data magic — I get it done, fast and fab. 6+ happy clients, 4.8 stars, and counting. Ready when you are!</p>
     </div>
 
     <div class="section">
       <h2>Services & Pricing</h2>
       <ul>
-        <li>📄 Resume Writing – starting at ₹100</li>
-        <li>🎨 Logo Designing – starting at ₹100</li>
-        <li>📊 Data Entry – starting at ₹100</li>
-        <li>📽️ PowerPoint & Excel Work – starting at ₹100</li>
-        <li>⚙️ Prices may vary based on specific needs and complexity.</li>
+        <li>📄 Resume Writing – ₹100+</li>
+        <li>🎨 Logo Designing – ₹100+</li>
+        <li>📊 Data Entry – ₹100+</li>
+        <li>📽️ PPT & Excel Work – ₹100+</li>
       </ul>
     </div>
 
     <div class="section">
-      <h2>Client Ratings</h2>
-      <p>⭐ 4.8 / 5 from 6+ happy clients</p>
-      <p>✅ 100% Satisfaction | 🚚 Fast Delivery</p>
-    </div>
-
-    <div class="section">
       <h2>Request a Service</h2>
-      <form action="https://formsubmit.co/tanishkakashyap15@gmail.com" method="POST" class="form-styled">
-  <label for="name">Your Name:</label>
-  <input type="text" id="name" name="name" required>
-
-  <label for="email">Your Email:</label>
-  <input type="email" id="email" name="email" required>
-
-  <label for="service">Select a Service:</label>
-  <select id="service" name="service" required>
-    <option value="" disabled selected>Choose a service</option>
-    <option value="Resume">Resume Writing</option>
-    <option value="Logo">Logo Designing</option>
-    <option value="Data Entry">Data Entry</option>
-    <option value="PowerPoint">PowerPoint & Excel</option>
-  </select>
-
-  <label for="timeline">In how many days do you want your work completed?</label>
-  <select id="timeline" name="timeline" required>
-    <option value="" disabled selected>Select timeline</option>
-    <option value="1 Day">1 Day</option>
-    <option value="2 Days">2 Days</option>
-    <option value="3 Days">3 Days</option>
-    <option value="1 Week">1 Week</option>
-    <option value="Flexible">Flexible</option>
-  </select>
-
-  <label for="details">More Details:</label>
-  <textarea id="details" name="details" rows="4" placeholder="Describe what you need..."></textarea>
-
-  <button type="submit">🚀 Submit Request</button>
-</form>
-
+      <form action="https://formsubmit.co/tanishkakashyap15@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <select name="service" required>
+          <option disabled selected>Select a Service</option>
+          <option>Resume</option>
+          <option>Logo</option>
+          <option>Data Entry</option>
+          <option>PowerPoint/Excel</option>
+        </select>
+        <select name="timeline" required>
+          <option disabled selected>Timeline</option>
+          <option>1 Day</option>
+          <option>2 Days</option>
+          <option>3 Days</option>
+          <option>1 Week</option>
+          <option>Flexible</option>
+        </select>
+        <textarea name="details" placeholder="Describe what you need..." rows="4"></textarea>
+        <button type="submit">🚀 Submit Request</button>
+      </form>
     </div>
 
     <div class="section">
       <h2>About Me</h2>
       <div class="about-me">
         <div class="about-text">
-          <p>Hi, I’m Tanishka — a final year BBA (FinTech) student and an intern at Genpact, where I’m sharpening my skills in the real-world business space. Along with my studies, I run Tanishka’s Creative Desk, helping people and businesses with resume writing, logo designing, PowerPoint magic, Excel tasks, and more.
-
-I’ve got a strong hand in Microsoft Office tools and a good eye for details that make work stand out. Whether it’s organizing data, designing creatives, or managing tasks smoothly, I love turning ideas into results. Balancing studies, work, and freelancing has taught me how to deliver quality, fast and right.</p>
+          <p>Hi, I’m Tanishka — a final year BBA (FinTech) student and intern at Genpact. Alongside studies, I run this freelancing desk to help with resumes, logo designs, PowerPoints, Excel tasks, and more!</p>
         </div>
         <div class="about-photo">
-          <img src="Images/my%20photo.jpg" alt="Tanishka's Photo" />
-
+          <img src="Images/my photo.jpg" alt="Tanishka's Photo">
         </div>
       </div>
     </div>
@@ -242,28 +236,17 @@ I’ve got a strong hand in Microsoft Office tools and a good eye for details th
       <h2>Contact Me</h2>
       <p>📧 Email: <a href="mailto:tanishkakashyap15@gmail.com">tanishkakashyap15@gmail.com</a></p>
       <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/tanishkakashyap" target="_blank">linkedin.com/in/tanishkakashyap</a></p>
-      <div class="qr">
-      </div>
     </div>
-
   </div>
 
   <script>
     const sections = document.querySelectorAll('.section');
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, {
-      threshold: 0.1
-    });
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
   </script>
 </body>
 
