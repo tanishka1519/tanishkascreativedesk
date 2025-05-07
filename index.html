@@ -1,157 +1,663 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tanishka's Creative Desk</title>
-    <style>
-        /* Global Styles */
-        :root {
-            --primary: #F8B4D9;
-            --secondary: #A78BFA;
-            --accent: #C2A7FB;
-            --background: #f0f4f8;
-            --text-color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanishka's Creative Desk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #a78bfa;
+      --secondary: #f0abfc;
+      --accent: #f472b6;
+      --bg-light: #f9fafb;
+      --text-dark: #374151;
+      --text-light: #6b7280;
+      --shadow: rgba(149, 157, 165, 0.15);
+    }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: var(--background);
-            margin: 0;
-            padding: 0;
-        }
+```
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Space Grotesk', sans-serif;
+}
 
-        h1, h2, h3, h4 {
-            margin: 0;
-            padding: 0;
-        }
+body {
+  background: linear-gradient(135deg, #f0e6ff, #ffe2f9, #e0f5ff);
+  background-size: 300% 300%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--text-dark);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
 
-        /* Container */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-            box-sizing: border-box;
-        }
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-        .section {
-            padding: 1.25rem;
-            margin-bottom: 1.5rem;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.9);
-            box-sizing: border-box;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-        }
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
 
-        /* Section Styles */
-        .services, .about, .contact, .form-section {
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            color: white;
-            text-align: center;
-        }
+.section {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 24px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 32px var(--shadow);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
 
-        .services h2, .about h2, .contact h2, .form-section h2 {
-            color: var(--secondary);
-        }
+.section:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(149, 157, 165, 0.2);
+}
 
-        /* Form Styling */
-        form.form-styled input,
-        form.form-styled select,
-        form.form-styled textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            box-sizing: border-box;
-            margin-bottom: 1rem;
-        }
+.section h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
 
-        form.form-styled button {
-            width: 100%;
-            padding: 1rem 1.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            color: white;
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(167, 139, 250, 0.4);
-            cursor: pointer;
-        }
+.section h2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 40px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
 
-        /* Media Queries */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0.75rem;
-                overflow-x: hidden;
-            }
+.section:hover h2:after {
+  width: 100%;
+}
 
-            .section {
-                padding: 1rem;
-                margin-bottom: 1rem;
-                border-radius: 12px;
-                box-sizing: border-box;
-            }
+.header {
+  text-align: center;
+  padding: 3rem 2rem;
+}
 
-            form.form-styled {
-                padding: 1rem;
-                gap: 1rem;
-            }
+.header img.logo {
+  width: 150px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: rotate(-3deg);
+  transition: transform 0.5s ease;
+}
 
-            form.form-styled button {
-                padding: 0.75rem 1rem;
-                font-size: 1rem;
-            }
+.header img.logo:hover {
+  transform: rotate(3deg) scale(1.05);
+}
 
-            .services, .about, .contact, .form-section {
-                background: linear-gradient(45deg, var(--primary), var(--secondary));
-            }
-        }
-    </style>
+.header h1 {
+  font-size: 3.5rem;
+  color: var(--primary);
+  margin: 1rem 0;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tagline {
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  opacity: 0;
+  animation: slideIn 1s ease-out 0.3s forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.service-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-icons div {
+  text-align: center;
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  border-radius: 16px;
+  width: 120px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.service-icons div:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-icons span {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.service-icons div:hover span {
+  transform: scale(1.2);
+}
+
+ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+ul li {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  position: relative;
+  padding-left: 2rem;
+  transition: transform 0.2s ease;
+}
+
+ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: var(--secondary);
+  border-radius: 50%;
+}
+
+ul li:hover {
+  transform: translateX(10px);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+a:hover:after {
+  width: 100%;
+}
+
+.about-me {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-photo {
+  flex-shrink: 0;
+}
+
+.about-photo img {
+  width: 220px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.about-photo img:hover {
+  transform: rotate(2deg) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+form.form-styled {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(149, 157, 165, 0.15);
+}
+
+form.form-styled label {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+form.form-styled input,
+form.form-styled select,
+form.form-styled textarea {
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+form.form-styled input:focus,
+form.form-styled select:focus,
+form.form-styled textarea:focus {
+  border-color: var(--secondary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(240, 171, 252, 0.3);
+}
+
+form.form-styled button {
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.4);
+}
+
+form.form-styled button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(167, 139, 250, 0.6);
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary);
+}
+
+.contact {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+}
+
+.contact p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Animation classes */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.8s ease forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .section {
+    padding: 1.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .service-icons {
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .service-icons div {
+    width: 90px;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-me {
+    flex-direction: column-reverse;
+    text-align: center;
+    align-items: center;
+  }
+
+  .about-text {
+    min-width: 100%;
+  }
+
+  form.form-styled {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+  
+  .section {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .header h1 {
+    font-size: 1.75rem;
+    margin: 0.5rem 0;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  ul li {
+    font-size: 0.95rem;
+    padding-left: 1.5rem;
+    margin: 0.75rem 0;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .service-icons {
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .service-icons div {
+    width: 70px;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .service-icons span {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  form.form-styled {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  form.form-styled label {
+    font-size: 0.95rem;
+  }
+  
+  form.form-styled input,
+  form.form-styled select,
+  form.form-styled textarea {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  form.form-styled button {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+```
+
+  </style>
 </head>
+
 <body>
+  <div class="container">
 
-    <div class="container">
-        <!-- Services Section -->
-        <div class="section services">
-            <h2>Services</h2>
-            <p>Offering a wide range of creative solutions including Prompt Engineering, Microsoft tools, and Power BI services.</p>
-        </div>
+```
+<div class="section header">
+  <img src="Images/logo.jpg" alt="Service Logo" class="logo" />
+  <h1>Tanishka's Creative Desk</h1>
+  <p class="tagline">Crafting Your Success, One Project at a Time</p>
+  <div class="service-icons">
+    <div class="fade-in" style="animation-delay: 0.1s"><span>📄</span>Resume</div>
+    <div class="fade-in" style="animation-delay: 0.2s"><span>📊</span>Power BI</div>
+    <div class="fade-in" style="animation-delay: 0.3s"><span>📽️</span>PowerPoint</div>
+    <div class="fade-in" style="animation-delay: 0.4s"><span>📈</span>Excel</div>
+    <div class="fade-in" style="animation-delay: 0.5s"><span>🔧</span>Microsoft</div>
+    <div class="fade-in" style="animation-delay: 0.6s"><span>💡</span>Prompts</div>
+  </div>
+</div>
 
-        <!-- About Section -->
-        <div class="section about">
-            <h2>About</h2>
-            <p>We specialize in delivering creative services that are tailored to your business needs. Let’s make something amazing together!</p>
-        </div>
+<div class="section slide-up" style="animation-delay: 0.2s">
+  <h2>About My Freelancing Business</h2>
+  <p>Big dreams? Messy tasks? Bring them to Tanishka's Creative Desk. From glow-up resumes to smooth data magic — I get it done, fast and fab. 6+ happy clients, 4.8 stars, and counting. What started as a small desk with big ideas is now a go-to spot for students, professionals, and small businesses who want their work to shine. Whether you're applying for your dream job, building your brand, or just need clean, crisp presentations — I'm here to make it easy, quick, and exactly the way you want. At Tanishka's Creative Desk, every project gets personal attention, because I believe in creating not just work, but wow moments. Ready to upgrade your game? Let's create something awesome together!</p>
+</div>
 
-        <!-- Contact Section -->
-        <div class="section contact">
-            <h2>Contact</h2>
-            <p>Get in touch with us for collaborations or inquiries.</p>
-        </div>
+<div class="section slide-up" style="animation-delay: 0.3s">
+  <h2>Services & Pricing</h2>
+  <ul>
+    <li>📄 Resume Writing – starting at ₹100</li>
+    <li>📊 Data Entry – starting at ₹100</li>
+    <li>📽️ PowerPoint & Excel Work – starting at ₹100</li>
+    <li>📄 PowerBI-Analysis – starting at ₹100</li>
+    <li>🔧 Other Tools – starting at ₹100</li>
+    <li>⚙️ Custom pricing based on complexity</li>
+  </ul>
+</div>
 
-        <!-- Form Section -->
-        <div class="section form-section">
-            <h2>Request Form</h2>
-            <form class="form-styled">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your full name">
+<div class="section slide-up" style="animation-delay: 0.4s">
+  <h2>Client Ratings</h2>
+  <p>⭐ 4.8 / 5 from 6+ happy clients</p>
+  <p>✅ 100% Satisfaction | 🚚 Fast Delivery</p>
+</div>
 
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Your email address">
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" placeholder="Enter your message"></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+<div class="section slide-up" style="animation-delay: 0.5s">
+  <h2>Request a Service</h2>
+  <form action="https://formsubmit.co/tanishkakashyap15@gmail.com" method="POST" enctype="multipart/form-data" class="form-styled">
+    <div>
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
     </div>
 
+    <div>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div>
+      <label for="service">Select a Service:</label>
+      <select id="service" name="service" required>
+        <option value="" disabled selected>Choose a service</option>
+        <option value="Resume">Resume Writing</option>
+        <option value="Data Entry">Data Entry</option>
+        <option value="PowerPoint">PowerPoint & Excel</option>
+        <option value="PowerBI">PowerBI Analysis</option>
+        <option value="Other">Others</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="timeline">Timeline:</label>
+      <select id="timeline" name="timeline" required>
+        <option value="" disabled selected>Select timeline</option>
+        <option value="1 Day">1 Day</option>
+        <option value="2 Days">2 Days</option>
+        <option value="3 Days">3 Days</option>
+        <option value="1 Week">1 Week</option>
+        <option value="Flexible">Flexible</option>
+      </select>
+    </div>
+
+    <div class="checkbox-wrapper">
+      <input type="checkbox" id="urgent" name="urgent" value="Yes">
+      <label for="urgent">Urgent Request?</label>
+    </div>
+
+    <div>
+      <label for="attachment">Attach a File (Optional):</label>
+      <input type="file" id="attachment" name="attachment">
+    </div>
+
+    <div>
+      <label for="details">More Details:</label>
+      <textarea id="details" name="details" rows="4" placeholder="Describe what you need..."></textarea>
+    </div>
+
+    <button type="submit">🚀 Submit Request</button>
+  </form>
+</div>
+
+<div class="section slide-up" style="animation-delay: 0.6s">
+  <h2>About Me</h2>
+  <div class="about-me">
+    <div class="about-text">
+      <p>Hi, I'm Tanishka — a final year BBA (FinTech) student and an intern at Genpact, where I'm sharpening my skills in the real-world business space. Along with my studies, I run Tanishka's Creative Desk, helping people and businesses with resume writing, PowerPoint magic, Excel tasks, and more. I've got a strong hand in Microsoft Office tools and a good eye for details that make work stand out. I love turning ideas into results. Balancing studies, work, and freelancing has taught me how to deliver quality, fast and right.</p>
+    </div>
+    <div class="about-photo">
+      <img src="Images/my%20photo.jpg" alt="Tanishka's Photo" />
+    </div>
+  </div>
+</div>
+
+<div class="section contact slide-up" style="animation-delay: 0.7s">
+  <h2>Contact Me</h2>
+  <p>📧 Email: <a href="mailto:tanishkakashyap15@gmail.com">tanishkakashyap15@gmail.com</a></p>
+  <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/tanishkakashyap" target="_blank">linkedin.com/in/tanishkakashyap</a></p>
+</div>
+```
+
+  </div>
+
+  <script>
+    // Lighter animations for mobile to prevent performance issues
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if device is mobile
+      const isMobile = window.innerWidth <= 768;
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '20px'
+      });
+
+      // Apply simpler animations for mobile devices
+      if (isMobile) {
+        // Simplify animations for better performance on mobile
+        document.querySelectorAll('.slide-up').forEach(el => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(15px)'; // Smaller transform distance
+          el.style.transition = 'opacity 0.4s ease, transform 0.4s ease'; // Faster transitions
+          observer.observe(el);
+        });
+        
+        // Make all service icons visible immediately on mobile
+        document.querySelectorAll('.service-icons div').forEach(el => {
+          el.classList.remove('fade-in');
+          el.style.opacity = '1';
+        });
+      } else {
+        // Full animations for desktop
+        document.querySelectorAll('.slide-up').forEach(el => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(30px)';
+          el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          observer.observe(el);
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+          if (!el.style.animationDelay) {
+            el.style.opacity = '0';
+            el.style.transition = 'opacity 0.6s ease';
+            observer.observe(el);
+          }
+        });
+      }
+      
+      // Fix for mobile layout issues - ensure proper width
+      if (isMobile) {
+        const metaViewport = document.querySelector('meta[name=viewport]');
+        if (metaViewport) {
+          metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');
+        }
+      }
+    });
+  </script>
+
 </body>
+
 </html>
