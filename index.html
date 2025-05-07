@@ -25,11 +25,19 @@
     }
 
     .section {
-      background: #fff;
+      background: linear-gradient(145deg, #FFEFF9, #E8F4FF);
       border-radius: 1rem;
       padding: 1.5rem;
       margin-bottom: 2rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .header {
@@ -104,6 +112,7 @@
     .about-me img {
       width: 180px;
       border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     @media (max-width: 768px) {
@@ -116,6 +125,14 @@
         gap: 1rem;
       }
     }
+
+    .decor-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -123,6 +140,7 @@
   <div class="container">
 
     <div class="section header">
+      <img class="decor-image" src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?auto=format&fit=crop&w=1350&q=80" alt="Decorative Header Image">
       <h1>Tanishka's Creative Desk</h1>
       <p class="tagline">Soft Skills. Sharp Results.</p>
       <div class="service-icons">
@@ -191,5 +209,22 @@
 
   </div>
 
+  <script>
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
