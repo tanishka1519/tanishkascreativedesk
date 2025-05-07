@@ -4,76 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tanishka's Creative Desk</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Quicksand', sans-serif;
     }
 
     body {
-      background: linear-gradient(120deg, #fce9f1, #e0f7fa, #f3e5f5);
-      background-size: cover;
-      color: #333;
-      line-height: 1.6;
+      background: linear-gradient(to right, #FDF6F0, #EBDFFB);
+      color: #2E2E2E;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
-      padding: 2rem;
+      padding: 2rem 1rem;
     }
 
     .section {
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 1.5rem;
-      padding: 2rem;
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
       margin-bottom: 2rem;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .header {
       text-align: center;
     }
 
-    .header img {
-      width: 130px;
-      border-radius: 1rem;
-      margin-bottom: 1rem;
-    }
-
     .header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      color: #643c73;
+      color: #5C4D7D;
+      font-size: 2.4rem;
     }
 
     .tagline {
-      font-weight: bold;
-      color: #af4261;
-      margin-bottom: 1rem;
+      color: #B07BAC;
+      margin-top: 0.5rem;
+    }
+
+    .service-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .service-icons div {
+      font-size: 1.2rem;
+      background: #F7ECFF;
+      padding: 0.8rem 1rem;
+      border-radius: 0.8rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
     h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: #4a2c5d;
+      color: #6B5B95;
       margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 1rem;
-    }
-
-    ul li::before {
-      content: "💡 ";
     }
 
     ul li {
       margin: 0.5rem 0;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    input, select, textarea, button {
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #D1B3E0;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #B886D6;
     }
 
     .about-me {
@@ -84,45 +102,18 @@
     }
 
     .about-me img {
-      width: 200px;
+      width: 180px;
       border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    input, select, textarea, button {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-    }
-
-    button {
-      background-color: #af4261;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #8f2b4f;
-    }
-
-    a {
-      color: #af4261;
-      text-decoration: none;
     }
 
     @media (max-width: 768px) {
       .about-me {
         flex-direction: column;
         text-align: center;
+      }
+
+      .service-icons {
+        gap: 1rem;
       }
     }
   </style>
@@ -132,66 +123,70 @@
   <div class="container">
 
     <div class="section header">
-      <img src="images/logo.jpg" alt="Logo" />
       <h1>Tanishka's Creative Desk</h1>
-      <p class="tagline">Your one-stop space for smart, stylish, standout work.</p>
+      <p class="tagline">Soft Skills. Sharp Results.</p>
+      <div class="service-icons">
+        <div>📄 Resume</div>
+        <div>💡 Prompt Engineering</div>
+        <div>📊 Power BI</div>
+        <div>🧮 Excel</div>
+        <div>📑 MS Word</div>
+        <div>📽️ PowerPoint</div>
+      </div>
     </div>
 
     <div class="section">
-      <h2>About My Freelancing</h2>
-      <p>I help students and professionals get things done beautifully and on time! From resumes to Microsoft tools, and now even Prompt Engineering, I turn messy tasks into masterpieces. With 6+ happy clients and a 4.8★ rating, you can count on quality, speed, and style!</p>
+      <h2>About the Business</h2>
+      <p>
+        Tanishka's Creative Desk is where ideas meet execution. From professional resumes and PowerPoint decks to automation in Excel and prompt engineering for AI, I help students and professionals stand out. Let's make your work shine effortlessly.
+      </p>
     </div>
 
     <div class="section">
-      <h2>Services Offered</h2>
+      <h2>Services</h2>
       <ul>
-        <li>Resume Writing</li>
-        <li>Prompt Engineering</li>
-        <li>Data Entry</li>
-        <li>PowerPoint & Excel Tasks</li>
-        <li>Microsoft Word & Outlook Assistance</li>
-        <li>Power BI Dashboards</li>
+        <li>📄 Resume Writing — from ₹100</li>
+        <li>💡 Prompt Engineering — from ₹100</li>
+        <li>📊 Power BI Reports — from ₹150</li>
+        <li>🧮 Excel Automation — from ₹100</li>
+        <li>📑 Word Formatting — from ₹100</li>
+        <li>📽️ PPT Design — from ₹100</li>
       </ul>
     </div>
 
     <div class="section">
       <h2>Request a Service</h2>
       <form action="https://formsubmit.co/tanishkakashyap15@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
         <select name="service" required>
-          <option value="">Choose a Service</option>
-          <option>Resume Writing</option>
+          <option disabled selected>Select a service</option>
+          <option>Resume</option>
           <option>Prompt Engineering</option>
-          <option>PowerPoint</option>
-          <option>Excel / Word</option>
           <option>Power BI</option>
+          <option>Excel</option>
+          <option>Word</option>
+          <option>PowerPoint</option>
         </select>
-        <select name="timeline" required>
-          <option value="">Timeline</option>
-          <option>1 Day</option>
-          <option>2 Days</option>
-          <option>3 Days</option>
-          <option>1 Week</option>
-          <option>Flexible</option>
-        </select>
-        <textarea name="details" rows="4" placeholder="Describe your need..."></textarea>
-        <button type="submit">🚀 Submit</button>
+        <textarea name="details" rows="4" placeholder="Describe your request..."></textarea>
+        <button type="submit">Submit</button>
       </form>
     </div>
 
-    <div class="section about-me">
-      <div>
-        <h2>About Me</h2>
-        <p>I'm Tanishka — a final year BBA FinTech student and intern at Genpact. I blend creativity and productivity to deliver beautiful, functional results across Microsoft tools, design, and smart automation.</p>
+    <div class="section">
+      <h2>About Me</h2>
+      <div class="about-me">
+        <p>
+          I'm Tanishka, a BBA (FinTech) student and intern at Genpact. With real-world experience and a creative streak, I help others present their best professional selves — one project at a time.
+        </p>
+        <img src="images/my photo.jpg" alt="Tanishka's Photo">
       </div>
-      <img src="images/my%20photo.jpg" alt="Tanishka's Photo" />
     </div>
 
     <div class="section">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:tanishkakashyap15@gmail.com">tanishkakashyap15@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/tanishkakashyap" target="_blank">/in/tanishkakashyap</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/tanishkakashyap" target="_blank">linkedin.com/in/tanishkakashyap</a></p>
     </div>
 
   </div>
