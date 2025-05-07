@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tanishka's Creative Desk</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
-      scroll-behavior: smooth;
     }
 
     body {
-      background: linear-gradient(135deg, #F8E9DD, #C5A8F1, #96E3D2);
-      color: #2A2A2A;
+      background: linear-gradient(120deg, #fce9f1, #e0f7fa, #f3e5f5);
+      background-size: cover;
+      color: #333;
       line-height: 1.6;
     }
 
@@ -28,69 +27,66 @@
     }
 
     .section {
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 2rem;
+      background: rgba(255, 255, 255, 0.85);
       border-radius: 1.5rem;
+      padding: 2rem;
       margin-bottom: 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
 
     .header {
       text-align: center;
     }
 
-    .logo {
-      width: 150px;
+    .header img {
+      width: 130px;
       border-radius: 1rem;
       margin-bottom: 1rem;
     }
 
-    h1 {
+    .header h1 {
+      font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
-      color: #462F6C;
+      color: #643c73;
     }
 
     .tagline {
-      color: #DB5C1C;
-      font-weight: 600;
-      margin-top: 0.5rem;
-    }
-
-    .service-icons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      font-size: 1.3rem;
-      margin-top: 1.5rem;
-    }
-
-    .service-icons div {
-      text-align: center;
-      min-width: 80px;
+      font-weight: bold;
+      color: #af4261;
+      margin-bottom: 1rem;
     }
 
     h2 {
+      font-family: 'Playfair Display', serif;
       font-size: 1.8rem;
+      color: #4a2c5d;
       margin-bottom: 1rem;
-      color: #1A1A1A;
     }
 
     ul {
-      list-style: none;
+      list-style-type: none;
       padding-left: 1rem;
+    }
+
+    ul li::before {
+      content: "💡 ";
     }
 
     ul li {
       margin: 0.5rem 0;
+    }
+
+    .about-me {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .about-me img {
+      width: 200px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     form {
@@ -99,155 +95,106 @@
       gap: 1rem;
     }
 
-    input, select, textarea {
-      padding: 0.75rem;
-      border-radius: 0.5rem;
+    input, select, textarea, button {
+      padding: 0.8rem;
       border: 1px solid #ccc;
+      border-radius: 0.5rem;
       font-size: 1rem;
     }
 
     button {
-      background-color: #462F6C;
-      color: #fff;
-      padding: 0.8rem;
+      background-color: #af4261;
+      color: white;
       border: none;
-      border-radius: 0.5rem;
-      font-size: 1rem;
       cursor: pointer;
-      transition: 0.3s ease;
+      transition: 0.3s;
     }
 
     button:hover {
-      background-color: #321f4f;
+      background-color: #8f2b4f;
     }
 
-    .about-me {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .about-text {
-      flex: 1;
-    }
-
-    .about-photo {
-      flex: 1;
-      text-align: center;
-    }
-
-    .about-photo img {
-      width: 200px;
-      max-width: 100%;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .contact a {
-      color: #462F6C;
+    a {
+      color: #af4261;
       text-decoration: none;
-      font-weight: bold;
     }
 
-    @media screen and (max-width: 600px) {
+    @media (max-width: 768px) {
       .about-me {
         flex-direction: column;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .logo {
-        width: 120px;
+        text-align: center;
       }
     }
   </style>
 </head>
-
 <body>
+
   <div class="container">
+
     <div class="section header">
-      <img src="Images/logo.jpg" alt="Logo" class="logo">
+      <img src="images/logo.jpg" alt="Logo" />
       <h1>Tanishka's Creative Desk</h1>
-      <p class="tagline">Crafting Your Success, One Project at a Time</p>
-      <div class="service-icons">
-        <div><span>📄</span><br>Resume</div>
-        <div><span>🎨</span><br>Logo</div>
-        <div><span>📊</span><br>Data</div>
-        <div><span>📽️</span><br>PPT</div>
-        <div><span>📈</span><br>Excel</div>
-      </div>
+      <p class="tagline">Your one-stop space for smart, stylish, standout work.</p>
     </div>
 
     <div class="section">
-      <h2>About My Freelancing Business</h2>
-      <p>Big dreams? Messy tasks? Bring them to Tanishka’s Creative Desk. From glow-up resumes to scroll-stopping logos and smooth data magic — I get it done, fast and fab. 6+ happy clients, 4.8 stars, and counting. Ready when you are!</p>
+      <h2>About My Freelancing</h2>
+      <p>I help students and professionals get things done beautifully and on time! From resumes to Microsoft tools, and now even Prompt Engineering, I turn messy tasks into masterpieces. With 6+ happy clients and a 4.8★ rating, you can count on quality, speed, and style!</p>
     </div>
 
     <div class="section">
-      <h2>Services & Pricing</h2>
+      <h2>Services Offered</h2>
       <ul>
-        <li>📄 Resume Writing – ₹100+</li>
-        <li>🎨 Logo Designing – ₹100+</li>
-        <li>📊 Data Entry – ₹100+</li>
-        <li>📽️ PPT & Excel Work – ₹100+</li>
+        <li>Resume Writing</li>
+        <li>Prompt Engineering</li>
+        <li>Data Entry</li>
+        <li>PowerPoint & Excel Tasks</li>
+        <li>Microsoft Word & Outlook Assistance</li>
+        <li>Power BI Dashboards</li>
       </ul>
     </div>
 
     <div class="section">
       <h2>Request a Service</h2>
       <form action="https://formsubmit.co/tanishkakashyap15@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
         <select name="service" required>
-          <option disabled selected>Select a Service</option>
-          <option>Resume</option>
-          <option>Logo</option>
-          <option>Data Entry</option>
-          <option>PowerPoint/Excel</option>
+          <option value="">Choose a Service</option>
+          <option>Resume Writing</option>
+          <option>Prompt Engineering</option>
+          <option>PowerPoint</option>
+          <option>Excel / Word</option>
+          <option>Power BI</option>
         </select>
         <select name="timeline" required>
-          <option disabled selected>Timeline</option>
+          <option value="">Timeline</option>
           <option>1 Day</option>
           <option>2 Days</option>
           <option>3 Days</option>
           <option>1 Week</option>
           <option>Flexible</option>
         </select>
-        <textarea name="details" placeholder="Describe what you need..." rows="4"></textarea>
-        <button type="submit">🚀 Submit Request</button>
+        <textarea name="details" rows="4" placeholder="Describe your need..."></textarea>
+        <button type="submit">🚀 Submit</button>
       </form>
     </div>
 
-    <div class="section">
-      <h2>About Me</h2>
-      <div class="about-me">
-        <div class="about-text">
-          <p>Hi, I’m Tanishka — a final year BBA (FinTech) student and intern at Genpact. Alongside studies, I run this freelancing desk to help with resumes, logo designs, PowerPoints, Excel tasks, and more!</p>
-        </div>
-        <div class="about-photo">
-          <img src="Images/my photo.jpg" alt="Tanishka's Photo">
-        </div>
+    <div class="section about-me">
+      <div>
+        <h2>About Me</h2>
+        <p>I'm Tanishka — a final year BBA FinTech student and intern at Genpact. I blend creativity and productivity to deliver beautiful, functional results across Microsoft tools, design, and smart automation.</p>
       </div>
+      <img src="images/my%20photo.jpg" alt="Tanishka's Photo" />
     </div>
 
-    <div class="section contact">
-      <h2>Contact Me</h2>
-      <p>📧 Email: <a href="mailto:tanishkakashyap15@gmail.com">tanishkakashyap15@gmail.com</a></p>
-      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/tanishkakashyap" target="_blank">linkedin.com/in/tanishkakashyap</a></p>
+    <div class="section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:tanishkakashyap15@gmail.com">tanishkakashyap15@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/tanishkakashyap" target="_blank">/in/tanishkakashyap</a></p>
     </div>
+
   </div>
 
-  <script>
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1 });
-    sections.forEach(section => observer.observe(section));
-  </script>
 </body>
-
 </html>
