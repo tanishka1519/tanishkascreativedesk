@@ -5,120 +5,124 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tanishka's Creative Desk</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Quicksand', sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
-      background: linear-gradient(120deg, #FDEFEF, #E5F6FF, #F3F0FF);
-      background-size: cover;
-      color: #2C2C2C;
+      background: linear-gradient(120deg, #fcefee, #e6e8f8);
+      color: #2A2A2A;
     }
 
     .container {
-      max-width: 960px;
-      margin: auto;
+      max-width: 1000px;
+      margin: 0 auto;
       padding: 2rem;
     }
 
     .section {
-      background: linear-gradient(145deg, #ffffffcc, #f7f4ffcc);
+      background: repeating-linear-gradient(135deg, #ffffffcc, #ffffffcc 40px, #f0f0f088 40px, #f0f0f088 80px);
       padding: 2rem;
-      border-radius: 1.5rem;
+      border-radius: 2rem;
       margin-bottom: 2rem;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
       opacity: 0;
       transform: translateY(40px);
-      animation: fadeInUp 1s ease forwards;
+      transition: opacity 1s ease, transform 1s ease;
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .header {
       text-align: center;
-      padding-bottom: 1rem;
+    }
+
+    .header img.logo {
+      width: 120px;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
     }
 
     .header h1 {
       font-size: 2.5rem;
-      color: #7A5CFA;
+      color: #a865c9;
     }
 
     .tagline {
-      color: #F58A8A;
       font-weight: 600;
-      margin-top: 0.5rem;
+      color: #db5c1c;
     }
 
     .section h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
+      color: #44355b;
       margin-bottom: 1rem;
-      color: #4C3F91;
     }
 
-    .section p, .section ul li {
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-
-    .section ul {
-      list-style-type: "💡 ";
+    ul {
+      list-style: none;
       padding-left: 1rem;
     }
 
-    .form-styled label,
+    ul li {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
     .form-styled input,
     .form-styled select,
     .form-styled textarea,
     .form-styled button {
       display: block;
       width: 100%;
-      margin-top: 1rem;
-    }
-
-    .form-styled input,
-    .form-styled select,
-    .form-styled textarea {
-      padding: 0.7rem;
-      border-radius: 0.8rem;
-      border: 1px solid #d1cce8;
-      background-color: #fff8f8;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
     }
 
     .form-styled button {
-      background-color: #7A5CFA;
+      background: #a865c9;
       color: white;
-      padding: 0.8rem;
       border: none;
-      border-radius: 1rem;
       cursor: pointer;
-      font-weight: bold;
-      margin-top: 1.5rem;
     }
 
-    .contact a {
-      color: #7A5CFA;
-      text-decoration: none;
-      font-weight: 600;
+    .about-me {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
     }
 
-    @media (max-width: 600px) {
-      .header h1 {
-        font-size: 2rem;
-      }
+    .about-text {
+      flex: 1;
+    }
 
-      .section {
-        padding: 1.5rem;
+    .about-photo {
+      flex: 1;
+      text-align: center;
+    }
+
+    .about-photo img {
+      width: 180px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .about-me {
+        flex-direction: column;
       }
     }
   </style>
@@ -126,81 +130,91 @@
 
 <body>
   <div class="container">
+
     <div class="section header">
+      <img src="images/logo.jpg" alt="Logo" class="logo">
       <h1>Tanishka's Creative Desk</h1>
-      <p class="tagline">Crafting Your Success, One Project at a Time</p>
+      <p class="tagline">Turning Ideas into Reality, Elegantly.</p>
     </div>
 
     <div class="section">
       <h2>About My Freelancing Business</h2>
-      <p>Big dreams? Messy tasks? Bring them to Tanishka’s Creative Desk. From scroll-stopping prompts to smooth data magic — I get it done, fast and fab. 6+ happy clients, 4.8 stars, and counting. Ready when you are!</p>
+      <p>From glow-up resumes to Power BI dashboards, Tanishka's Creative Desk is where design meets function. I blend creativity and clarity to deliver resumes, data work, presentations, and prompt engineering with style. Your vision, delivered with elegance and speed.</p>
     </div>
 
     <div class="section">
       <h2>Services & Pricing</h2>
       <ul>
-        <li>📄 Resume Writing – starting at ₹100</li>
-        <li>🧠 Prompt Engineering – starting at ₹150</li>
-        <li>📊 Data Entry – starting at ₹100</li>
-        <li>📽️ PowerPoint & Excel Work – starting at ₹100</li>
-        <li>📊 Power BI Dashboards – starting at ₹200</li>
-        <li>🧰 All Microsoft Office Tools Available</li>
+        <li>📄 Resume Writing – from ₹100</li>
+        <li>🧠 Prompt Engineering – from ₹100</li>
+        <li>📊 Data Entry – from ₹100</li>
+        <li>📽️ PowerPoint & Excel Work – from ₹100</li>
+        <li>📈 Power BI Dashboards – from ₹200</li>
+        <li>🧰 All MS Office Tool Support – ask for quote</li>
       </ul>
     </div>
 
     <div class="section">
       <h2>Client Ratings</h2>
-      <p>⭐ 4.8 / 5 from 6+ happy clients</p>
-      <p>✅ 100% Satisfaction | 🚚 Fast Delivery</p>
+      <p>⭐ 4.8 / 5 from 6+ clients</p>
+      <p>✅ Fast | Reliable | Polished Results</p>
     </div>
 
     <div class="section">
       <h2>Request a Service</h2>
       <form action="https://formsubmit.co/tanishkakashyap15@gmail.com" method="POST" class="form-styled">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="service">Select a Service:</label>
-        <select id="service" name="service" required>
-          <option value="" disabled selected>Choose a service</option>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <select name="service" required>
+          <option disabled selected>Choose a Service</option>
           <option value="Resume">Resume Writing</option>
-          <option value="Prompt Engineering">Prompt Engineering</option>
+          <option value="Prompt">Prompt Engineering</option>
+          <option value="Power BI">Power BI</option>
           <option value="Data Entry">Data Entry</option>
           <option value="PowerPoint">PowerPoint & Excel</option>
-          <option value="Power BI">Power BI Dashboard</option>
         </select>
-
-        <label for="timeline">Timeline:</label>
-        <select id="timeline" name="timeline" required>
-          <option value="" disabled selected>Select timeline</option>
+        <select name="timeline" required>
+          <option disabled selected>Select timeline</option>
           <option value="1 Day">1 Day</option>
           <option value="2 Days">2 Days</option>
-          <option value="3 Days">3 Days</option>
           <option value="1 Week">1 Week</option>
-          <option value="Flexible">Flexible</option>
         </select>
-
-        <label for="details">More Details:</label>
-        <textarea id="details" name="details" rows="4" placeholder="Describe your request..."></textarea>
-
+        <textarea name="details" rows="4" placeholder="Describe what you need..."></textarea>
         <button type="submit">🚀 Submit Request</button>
       </form>
     </div>
 
     <div class="section">
       <h2>About Me</h2>
-      <p>Hi, I’m Tanishka — a final year BBA (FinTech) student and an intern at Genpact, where I’m sharpening my skills in real-world business. I help people and businesses with prompt engineering, resumes, PowerPoint, Excel, and dashboards. Let’s create something amazing!</p>
+      <div class="about-me">
+        <div class="about-text">
+          <p>Hi, I'm Tanishka — BBA (FinTech) student & intern at Genpact. I manage client work with MS tools, prompt engineering, Power BI, and more. With 6+ happy clients and a passion for elegant solutions, I’m here to simplify your work — beautifully.</p>
+        </div>
+        <div class="about-photo">
+          <img src="images/myphoto.jpg" alt="Tanishka's Photo">
+        </div>
+      </div>
     </div>
 
-    <div class="section contact">
+    <div class="section">
       <h2>Contact Me</h2>
-      <p>📧 Email: <a href="mailto:tanishkakashyap15@gmail.com">tanishkakashyap15@gmail.com</a></p>
-      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/tanishkakashyap" target="_blank">linkedin.com/in/tanishkakashyap</a></p>
+      <p>📧 <a href="mailto:tanishkakashyap15@gmail.com">tanishkakashyap15@gmail.com</a></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/tanishkakashyap" target="_blank">LinkedIn Profile</a></p>
     </div>
+
   </div>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 
 </html>
